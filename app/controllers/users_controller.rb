@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       user = User.find_by(email: sign_in_params[:email])
       
       if user&.authenticate(sign_in_params[:password])
-        token = encode_token(user_id: user.id)
+        token = JsonWebToken.encode(user_id: user.id)  # Use JsonWebToken here
         render json: { token: token }, status: :ok
       else
         render json: { error: 'Invalid email or password' }, status: :unauthorized
