@@ -1,7 +1,10 @@
 # In app/controllers/application_controller.rb
 class ApplicationController < ActionController::API
     before_action :authorize_request
-    
+    def authenticate_request
+        @current_user = AuthorizeApiRequest.call(request.headers).result
+        render json: { error: 'Unauthorized' }, status: :unauthorized unless @current_user
+      end
     # Fallback action for unmatched routes
     def route_not_found
       render json: { error: 'Not Found' }, status: :not_found

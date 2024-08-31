@@ -18,11 +18,8 @@ services:
     command: bundle exec sidekiq
     environment:
       - RAILS_ENV=development
-      - SECRET_KEY_BASE=your_development_secret_key_here
+      - SECRET_KEY_BASE=92554f343adad31489fec9aca03c39c08f38477b9084b5682c8e2698bee7c4001de2f47271ae9b2f15ed81e48758d72dde2c46a3676d73180433563a7141ff08
       - REDIS_URL=redis://redis:6379/0
-      - DB_HOST=db
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=password
     depends_on:
       - db
       - redis
@@ -33,13 +30,11 @@ services:
       - ".:/app"
     environment:
       - RAILS_ENV=development
-      - SECRET_KEY_BASE=your_development_secret_key_here
+      - SECRET_KEY_BASE=92554f343adad31489fec9aca03c39c08f38477b9084b5682c8e2698bee7c4001de2f47271ae9b2f15ed81e48758d72dde2c46a3676d73180433563a7141ff08
       - REDIS_URL=redis://redis:6379/0
-      - DB_HOST=db
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=password
     ports:
       - "3000:3000"
     depends_on:
       - db
       - redis
+
