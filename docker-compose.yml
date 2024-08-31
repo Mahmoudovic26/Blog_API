@@ -9,32 +9,34 @@ services:
       - "5432:5432"
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
+
   redis:
     image: redis:latest
     ports:
       - "6379:6379"
+
   sidekiq:
     build: .
     command: bundle exec sidekiq
     environment:
-      - RAILS_ENV=development
-      - SECRET_KEY_BASE=92554f343adad31489fec9aca03c39c08f38477b9084b5682c8e2698bee7c4001de2f47271ae9b2f15ed81e48758d72dde2c46a3676d73180433563a7141ff08
-      - REDIS_URL=redis://redis:6379/0
+      RAILS_MASTER_KEY: ${RAILS_MASTER_KEY}
+      RAILS_ENV: development
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE}
+      REDIS_URL: redis://redis:6379/0
     depends_on:
       - db
       - redis
+
   web:
     build: .
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -b '0.0.0.0'"
+    command: bash -c "chmod +x /rails/setup_credentials.sh && /rails/setup_credentials.sh && rm -f tmp/pids/server.pid && bundle exec rails s -b '0.0.0.0'"
     volumes:
-      - ".:/app"
+      - ".:/rails"
     environment:
-      - RAILS_ENV=development
-      - SECRET_KEY_BASE=92554f343adad31489fec9aca03c39c08f38477b9084b5682c8e2698bee7c4001de2f47271ae9b2f15ed81e48758d72dde2c46a3676d73180433563a7141ff08
-      - REDIS_URL=redis://redis:6379/0
+      RAILS_ENV: development
+      REDIS_URL: redis://redis:6379/0
     ports:
       - "3000:3000"
     depends_on:
       - db
       - redis
-
