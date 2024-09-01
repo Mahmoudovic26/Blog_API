@@ -1,24 +1,16 @@
-# README
+# Blog Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple blog application that allows users to sign up, create posts, comment on posts, and tag posts.
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+### Prerequisites
+- Docker
+- Docker Compose
 
-* System dependencies
+### Installation
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/blog-app.git
+   cd blog-app
