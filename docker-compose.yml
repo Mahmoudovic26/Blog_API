@@ -18,6 +18,8 @@ services:
   sidekiq:
     build: .
     command: bundle exec sidekiq
+    env_file:
+      - .env
     environment:
       RAILS_MASTER_KEY: ${RAILS_MASTER_KEY}
       RAILS_ENV: development
