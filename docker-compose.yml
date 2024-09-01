@@ -32,6 +32,8 @@ services:
     command: bash -c "chmod +x /rails/setup_credentials.sh && /rails/setup_credentials.sh && rm -f tmp/pids/server.pid && bundle exec rails s -b '0.0.0.0'"
     volumes:
       - ".:/rails"
+    env_file:
+      - .env
     environment:
       RAILS_ENV: development
       REDIS_URL: redis://redis:6379/0
