@@ -17,8 +17,7 @@ This Blog application allows users to sign up, sign in, create posts, add commen
    ```
 2.  Run Docker:
    ```bash
-   cd Blog_API
-   docker-compose up
+    docker-compose up
    ```
 ### Postman dcoumentations
 You can find the Postman collection for this API [here](https://documenter.getpostman.com/view/36637805/2sAXjM3X1h). This collection includes all the endpoints, request bodies, and sample responses.
