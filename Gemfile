@@ -14,7 +14,7 @@ gem 'bcrypt', '~> 3.1.13' # For password hashing
 gem 'jwt', '~> 2.5' # For JWT authentication
 gem 'sidekiq', '~> 7.0' # For background job processing
 gem 'redis', '~> 5.0' # For Redis integration
-gem 'rspec-rails', '~> 6.0', group: [:development, :test] # For testing
+gem 'rspec-rails', '~> 7.0', group: [:development, :test] # For testing
 gem 'rack-cors'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
