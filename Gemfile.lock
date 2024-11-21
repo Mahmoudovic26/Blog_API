@@ -102,7 +102,7 @@ GEM
     jwt (2.8.2)
       base64
     language_server-protocol (3.17.0.3)
-    logger (1.6.0)
+    logger (1.6.1)
     loofah (2.22.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -147,7 +147,7 @@ GEM
     puma (6.4.2)
       nio4r (~> 2.0)
     racc (1.8.1)
-    rack (3.1.7)
+    rack (3.1.8)
     rack-cors (2.0.2)
       rack (>= 2.0.0)
     rack-session (2.0.0)
@@ -247,8 +247,7 @@ GEM
       rubocop-rails
     ruby-progressbar (1.13.0)
     securerandom (0.3.1)
-    sidekiq (7.3.1)
-      concurrent-ruby (< 2)
+    sidekiq (7.3.6)
       connection_pool (>= 2.3.0)
       logger
       rack (>= 2.2.4)
@@ -288,7 +287,7 @@ DEPENDENCIES
   redis (~> 5.0)
   rspec-rails (~> 6.0)
   rubocop-rails-omakase
-  sidekiq (~> 7.0)
+  sidekiq (~> 7.3)
   tzinfo-data
 
 BUNDLED WITH

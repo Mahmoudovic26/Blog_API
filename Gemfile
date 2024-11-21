@@ -12,7 +12,7 @@ gem "puma", ">= 5.0"
 # gem "redis", ">= 4.0.1"
 gem 'bcrypt', '~> 3.1.13' # For password hashing
 gem 'jwt', '~> 2.5' # For JWT authentication
-gem 'sidekiq', '~> 7.0' # For background job processing
+gem 'sidekiq', '~> 7.3' # For background job processing
 gem 'redis', '~> 5.0' # For Redis integration
 gem 'rspec-rails', '~> 6.0', group: [:development, :test] # For testing
 gem 'rack-cors'
